@@ -32,3 +32,6 @@ i.e.  if you type ls command
 
 # Current issues : it do not support sudo command as it requires password and it doesn't support immediate to provide immediate respond
     This project will work fine with all one line commands
+
+
+# Encryption : Encryption is only provided on one side of transmission (client to server)

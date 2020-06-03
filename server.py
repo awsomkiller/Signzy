@@ -5,7 +5,7 @@ import _thread
 import os
 import rsa
 
-(serv_pub, serv_priv) = rsa.newkeys(1024)
+(serv_pub, serv_priv) = rsa.newkeys(1024)               # creating public and private key
 
 
 def on_new_client(clientsocket, addr):
@@ -15,7 +15,7 @@ def on_new_client(clientsocket, addr):
             msg = clientsocket.recv(1024)
             if msg.decode('utf-8') == "requestkey":
                 sendkey = serv_pub.save_pkcs1(format='PEM')  # converting pub key to PEM format
-                clientsocket.send(sendkey)  # sending the key to client
+                clientsocket.send(sendkey)                   # sending the key to client
                 flag = False
         recv = clientsocket.recv(1024)
         msg = rsa.decrypt(recv,serv_priv)
